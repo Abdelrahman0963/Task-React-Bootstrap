@@ -3,7 +3,8 @@ import ScrollReveal, {
   SlideFromLift,
   SlideFromRight,
 } from "./animation/Animation";
-import { CiCircleCheck } from "react-icons/ci";
+import { IoCheckmarkOutline } from "react-icons/io5";
+import { FaLightbulb } from "react-icons/fa";
 
 export default function About() {
   return (
@@ -42,14 +43,32 @@ export default function About() {
                   </p>
                 </div>
               </SlideFromRight>
-              <div className="aboutPage-Content-cards">
-                <div className="aboutPage-Content-card">
-                  <CiCircleCheck />
-                  <p>
-                    We focus on crafting bespoke strategies that navigate
-                    complexity and deliver tangible results for our clients.
-                  </p>
-                </div>
+              <div className="aboutPage-Content-cards d-flex gap-3 py-5">
+                <ScrollReveal delay={0.6}>
+                  <div className="aboutPage-Content-card rounded-3">
+                    <nav className="aboutPage-Content-card-icon">
+                      <IoCheckmarkOutline />
+                    </nav>
+                    <h6>Dedicated Team Support</h6>
+                    <p>
+                      Our highly skilled professionals are committed to
+                      providing personalized service and impactful solutions on
+                      every engagement.
+                    </p>
+                  </div>
+                </ScrollReveal>
+                <ScrollReveal delay={0.8}>
+                  <div className="aboutPage-Content-card rounded-3">
+                    <nav className="aboutPage-Content-card-icon-tow">
+                      <FaLightbulb />
+                    </nav>
+                    <h6>Forward-Thinking Approach</h6>
+                    <p>
+                      We embrace innovative methodologies to develop unique
+                      strategies that drive lasting success.
+                    </p>
+                  </div>
+                </ScrollReveal>
               </div>
             </div>
           </div>
