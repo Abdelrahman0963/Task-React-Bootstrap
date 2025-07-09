@@ -9,7 +9,7 @@ export default function About() {
           Learn More About Us
         </h2>
         <div className="aboutPage-Content-Container py-5">
-          <div className="aboutPage-Content-image col-6 rounded-4 overflow-hidden">
+          <div className="aboutPage-Content-image  col-md-6  rounded-4 overflow-hidden">
             <img
               src="https://bootstrapmade.com/content/demo/Strategy/assets/img/about/about-portrait-1.webp"
               alt=""
