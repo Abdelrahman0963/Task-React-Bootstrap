@@ -40,4 +40,19 @@ export function SlideFromRight({ children, delay = 0 }) {
     </motion.div>
   );
 }
+export function Floating({ children, delay = 0 }) {
+  return (
+    <motion.div
+      initial={{ opacity: 0, scale: 0.1 }}
+      animate={{ opacity: 1, scale: 1 }}
+      transition={{
+        duration: 1,
+        ease: "easeOut",
+      }}
+      viewport={{ once: true, amount: 0.2 }}
+    >
+      {children}
+    </motion.div>
+  );
+}
 export default ScrollReveal;

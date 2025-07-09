@@ -3,6 +3,7 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  font-family: var(--font-nunito);
 }
 :root {
   --primary-color: #031119;
@@ -20,7 +21,6 @@
 }
 html {
   scroll-behavior: smooth;
-  font-family: var(--font-ropoto);
 }
 .hero {
   height: 100vh;
@@ -145,6 +145,8 @@ header {
     cursor: pointer;
   }
   .navbar-iconClose svg {
+    width: 30px;
+    height: 30px;
     fill: #fff;
   }
   .dropdown {
@@ -271,6 +273,8 @@ header {
   font-family: var(--font-nunito);
 }
 .homepage-btn-icon svg {
+  width: 30px;
+  height: 30px;
   fill: #fff;
   transform: translateY(-4px);
   -webkit-transform: translateY(-4px);
@@ -327,6 +331,8 @@ header {
   -o-transform: translateY(-3px);
 }
 .card-num-icon-svg svg {
+  width: 30px;
+  height: 30px;
   transform: rotate(-40deg);
   -webkit-transform: rotate(-40deg);
   -moz-transform: rotate(-40deg);
@@ -336,7 +342,7 @@ header {
 }
 .homepage-card {
   position: absolute;
-  right: 4rem;
+  right: -15rem;
   bottom: 1rem;
 }
 @media (min-width: 768px) and (max-width: 1023px) {
@@ -448,4 +454,10 @@ header {
   -moz-border-radius: 1rem 0 0 1rem;
   -ms-border-radius: 1rem 0 0 1rem;
   -o-border-radius: 1rem 0 0 1rem;
+}
+.aboutPage-Content-text p {
+  color: #687075;
+  font-size: 1.1rem;
+  font-weight: 400;
+  font-family: var(--font-nunito);
 }
