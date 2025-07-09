@@ -338,6 +338,7 @@ header {
   .homePage {
     padding: var(--padding-lg);
     flex-direction: column;
+    height: 200vh;
   }
   .homepage-img-container {
     padding: var(--padding-lg);
@@ -361,6 +362,7 @@ header {
   .homePage {
     flex-direction: column !important;
     padding: var(--padding-md);
+    height: 200vh;
   }
   .homepage-content-container .homepage-line {
     width: 240px;
