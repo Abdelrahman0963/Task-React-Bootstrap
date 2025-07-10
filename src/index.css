@@ -509,3 +509,67 @@ header {
   -ms-transform: translateY(-10px);
   -o-transform: translateY(-10px);
 }
+.btn.btn-about {
+  width: 215px;
+  height: 50px;
+  background: var(--success-color);
+  color: #fff;
+  font-weight: 600;
+  border-radius: 5rem !important;
+  -webkit-border-radius: 5rem !important;
+  -moz-border-radius: 5rem !important;
+  -ms-border-radius: 5rem !important;
+  -o-border-radius: 5rem !important;
+}
+.btn.btn-about:hover {
+  color: #fff !important;
+}
+@media (min-width: 768px) and (max-width: 1023px) {
+  .aboutPage {
+    padding: var(--padding-lg);
+  }
+  .aboutPage h5::after {
+    left: 10%;
+  }
+}
+@media (max-width: 767px) {
+  .aboutPage {
+    padding: var(--padding-md);
+  }
+  .aboutPage h2 {
+    font-size: 1.5rem;
+  }
+  .aboutPage-Content-Container {
+    display: flex;
+    flex-direction: column !important;
+    align-items: center !important;
+  }
+  .aboutPage-Content-image-card {
+    width: 130px;
+    height: 100px;
+    bottom: 20px;
+  }
+  .aboutPage-Content-image-card p {
+    font-size: 1rem !important;
+  }
+  .col-6 {
+    flex: 0 0 auto !important;
+    width: 100% !important;
+  }
+  .aboutPage-Content-cards {
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+  }
+  .aboutPage-Content-btn {
+    display: flex !important;
+    justify-content: center !important;
+  }
+  .aboutPage h5::after {
+    left: 22%;
+    width: 85px;
+  }
+  .btn.btn-about {
+    font-size: 1rem !important;
+  }
+}

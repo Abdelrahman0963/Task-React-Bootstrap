@@ -17,8 +17,8 @@ export default function About() {
           </h2>
         </ScrollReveal>
         <SlideFromLift delay={0.2}>
-          <div className="aboutPage-Content-Container py-5 d-flex align-items-center gap-5">
-            <div className="aboutPage-Content-image  col-md-6  rounded-4 overflow-hidden">
+          <div className="aboutPage-Content-Container py-5 d-flex align-items-center gap-5 flex-md-column flex-sm-column">
+            <div className="aboutPage-Content-image  col-6 col-md-12 col-sm-12 rounded-4 overflow-hidden">
               <img
                 src="https://bootstrapmade.com/content/demo/Strategy/assets/img/about/about-portrait-1.webp"
                 alt=""
@@ -28,7 +28,7 @@ export default function About() {
                 <p className="fs-5">Years of Expertise</p>
               </div>
             </div>
-            <div className="aboutPage-Content col-md-6 ">
+            <div className="aboutPage-Content col-6  col-md-12 col-sm-12">
               <SlideFromRight delay={0.4}>
                 <div className="aboutPage-Content-text">
                   <h2>Elevating Business Performance Through Innovation</h2>
@@ -70,6 +70,15 @@ export default function About() {
                   </div>
                 </ScrollReveal>
               </div>
+              <SlideFromRight delay={0.6}>
+                <div className="aboutPage-Content-btn">
+                  <a className="text-decoration-none" href="home">
+                    <button className="btn btn-about">
+                      Explore Our Services
+                    </button>
+                  </a>
+                </div>
+              </SlideFromRight>
             </div>
           </div>
         </SlideFromLift>
