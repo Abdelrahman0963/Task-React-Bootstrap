@@ -349,7 +349,7 @@ header {
   .homePage {
     padding: var(--padding-lg);
     flex-direction: column;
-    height: 200vh;
+    height: 115vh;
   }
   .homepage-img-container {
     padding: var(--padding-lg);
@@ -373,7 +373,7 @@ header {
   .homePage {
     flex-direction: column !important;
     padding: var(--padding-md);
-    height: 200vh;
+    height: 167vh;
   }
   .homepage-content-container .homepage-line {
     width: 240px;
@@ -528,8 +528,28 @@ header {
   .aboutPage {
     padding: var(--padding-lg);
   }
+  .aboutPage-Content-Container {
+    flex-direction: column !important;
+  }
   .aboutPage h5::after {
     left: 10%;
+  }
+  .aboutPage-Content-image {
+    width: 100% !important;
+  }
+  .aboutPage-Content {
+    width: 100% !important;
+  }
+  .aboutPage-Content-card {
+    width: 375px;
+    height: 219px;
+    display: flex;
+    flex-direction: column;
+    padding: 1.2rem;
+    gap: 0.8rem;
+  }
+  .btn-about {
+    font-size: 1.1rem !important;
   }
 }
 @media (max-width: 767px) {
@@ -552,24 +572,25 @@ header {
   .aboutPage-Content-image-card p {
     font-size: 1rem !important;
   }
-  .col-6 {
-    flex: 0 0 auto !important;
-    width: 100% !important;
-  }
   .aboutPage-Content-cards {
     display: flex !important;
     flex-direction: column !important;
     align-items: center !important;
+    padding-top: 1.5rem !important;
+  }
+  .aboutPage-Content-card {
+    width: 100% !important;
   }
   .aboutPage-Content-btn {
     display: flex !important;
     justify-content: center !important;
+    padding-top: 2rem !important;
   }
   .aboutPage h5::after {
     left: 22%;
     width: 85px;
   }
-  .btn.btn-about {
-    font-size: 1rem !important;
+  .aboutPage-Content {
+    width: 100% !important;
   }
 }

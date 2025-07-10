@@ -5,7 +5,7 @@ import { IoIosArrowRoundForward } from "react-icons/io";
 export default function Home() {
   return (
     <>
-      <section id="home" className="homePage d-flex justify-content-between">
+      <section id="home" className="homePage d-flex gap-5 ">
         <ScrollReveal>
           <div className="homepage-content-container d-flex flex-column gap-3">
             <h3>OUR AGENCY</h3>
