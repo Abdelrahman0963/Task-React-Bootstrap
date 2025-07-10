@@ -1,4 +1,6 @@
 import React from "react";
+import { RiCloseLine } from "react-icons/ri";
+import { MdOutlineKeyboardArrowDown } from "react-icons/md";
 
 export default function Navbar() {
   function navbarOpen() {
@@ -40,17 +42,7 @@ export default function Navbar() {
                 id="navbarNavDropdown"
               >
                 <div className="navbar-iconClose" onClick={navbarClose}>
-                  <svg
-                    stroke="currentColor"
-                    fill="currentColor"
-                    strokeWidth="0"
-                    viewBox="0 0 512 512"
-                    height="30px"
-                    width="30px"
-                    xmlns="http://www.w3.org/2000/svg"
-                  >
-                    <path d="M405 136.798L375.202 107 256 226.202 136.798 107 107 136.798 226.202 256 107 375.202 136.798 405 256 285.798 375.202 405 405 375.202 285.798 256z"></path>
-                  </svg>
+                  <RiCloseLine />
                 </div>
                 <ul className="navbar-nav">
                   <li className="nav-item ">
@@ -93,17 +85,7 @@ export default function Navbar() {
                       Dropdown link
                     </a>
                     <span>
-                      <svg
-                        stroke="currentColor"
-                        fill="currentColor"
-                        strokeWidth="0"
-                        viewBox="0 0 320 512"
-                        height="16px"
-                        width="16px"
-                        xmlns="http://www.w3.org/2000/svg"
-                      >
-                        <path d="M143 352.3L7 216.3c-9.4-9.4-9.4-24.6 0-33.9l22.6-22.6c9.4-9.4 24.6-9.4 33.9 0l96.4 96.4 96.4-96.4c9.4-9.4 24.6-9.4 33.9 0l22.6 22.6c9.4 9.4 9.4 24.6 0 33.9l-136 136c-9.2 9.4-24.4 9.4-33.8 0z"></path>
-                      </svg>
+                      <MdOutlineKeyboardArrowDown />
                     </span>
                     <ul className="dropdown-menu">
                       <li>

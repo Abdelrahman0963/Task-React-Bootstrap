@@ -19,6 +19,7 @@ export default function App() {
           right: 0,
           height: 10,
           originX: 0,
+          zIndex: 10,
           backgroundColor: "#e3a127",
         }}
       />
