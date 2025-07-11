@@ -21,6 +21,7 @@
 }
 html {
   scroll-behavior: smooth;
+  overflow-x: hidden;
 }
 .hero {
   height: 100vh;
