@@ -8,8 +8,38 @@ import { GoArrowLeft } from "react-icons/go";
 import { GoArrowRight } from "react-icons/go";
 import { FaLightbulb } from "react-icons/fa";
 import { FaStar } from "react-icons/fa";
+import { FaStarHalf } from "react-icons/fa";
 
 export default function About() {
+  const feedBackContent = [
+    {
+      rate: 5,
+      FeedBack:
+        "Their dedication to delivering superior solutions and their meticulous attention to detail have profoundly impacted ourcorporate growth trajectory.",
+      userImg:
+        "https://bootstrapmade.com/content/demo/Strategy/assets/img/person/person-m-1.webp",
+      userName: "John Doe",
+      userJob: "Manager, ABC Company",
+    },
+    {
+      rate: 4.5,
+      FeedBack:
+        "Their dedication to delivering superior solutions and their meticulous attention to detail have profoundly impacted ourcorporate growth trajectory.",
+      userImg:
+        "https://bootstrapmade.com/content/demo/Strategy/assets/img/person/person-m-1.webp",
+      userName: "John Doe",
+      userJob: "Manager, ABC Company",
+    },
+    {
+      rate: 3,
+      FeedBack:
+        "Their dedication to delivering superior solutions and their meticulous attention to detail have profoundly impacted ourcorporate growth trajectory.",
+      userImg:
+        "https://bootstrapmade.com/content/demo/Strategy/assets/img/person/person-m-1.webp",
+      userName: "John Doe",
+      userJob: "Manager, ABC Company",
+    },
+  ];
   return (
     <>
       <section className="aboutPage">
@@ -101,90 +131,34 @@ export default function About() {
               </div>
             </div>
             <div className="about-move-slid-container-feedback-cards col-12 col-lg-6 ">
-              <div className="about-move-slid-container-feedback-card d-flex flex-column rounded-4 gap-4">
-                <nav className="about-move-slid-container-feedback-rate">
-                  <FaStar />
-                  <FaStar />
-                  <FaStar />
-                  <FaStar />
-                  <FaStar />
-                </nav>
-                <nav className="about-move-slid-container-feedback-content">
-                  <p>
-                    "Their dedication to delivering superior solutions and their
-                    meticulous attention to detail have profoundly impacted our
-                    corporate growth trajectory."
-                  </p>
-                </nav>
-                <nav className="about-move-slid-container-feedback-porfile d-flex gap-2">
-                  <nav className="user-porfile-image">
-                    <img
-                      src="https://bootstrapmade.com/content/demo/Strategy/assets/img/person/person-m-1.webp"
-                      alt="userPorfile"
-                    />
+              {feedBackContent.map((item) => (
+                <div
+                  key={item.id}
+                  className="about-move-slid-container-feedback-card d-flex flex-column rounded-4 gap-4"
+                >
+                  <nav className="about-move-slid-container-feedback-rate">
+                    {Array.from({ length: item.rate }).map((_, i) => (
+                      <FaStar key={i} />
+                    ))}
+                    {item.rate % 1 === 0.5 && <FaStarHalf />}
                   </nav>
-                  <nav className="user-porfile-info">
-                    <h6>John Doe</h6>
-                    <p>CEO, ABC Company</p>
+
+                  <nav className="about-move-slid-container-feedback-content">
+                    <p>{item.FeedBack}</p>
                   </nav>
-                </nav>
-              </div>
-              <div className="about-move-slid-container-feedback-card d-flex flex-column rounded-4 gap-4">
-                <nav className="about-move-slid-container-feedback-rate">
-                  <FaStar />
-                  <FaStar />
-                  <FaStar />
-                  <FaStar />
-                  <FaStar />
-                </nav>
-                <nav className="about-move-slid-container-feedback-content">
-                  <p>
-                    "Their dedication to delivering superior solutions and their
-                    meticulous attention to detail have profoundly impacted our
-                    corporate growth trajectory."
-                  </p>
-                </nav>
-                <nav className="about-move-slid-container-feedback-porfile d-flex gap-2">
-                  <nav className="user-porfile-image">
-                    <img
-                      src="https://bootstrapmade.com/content/demo/Strategy/assets/img/person/person-m-1.webp"
-                      alt="userPorfile"
-                    />
+
+                  <nav className="about-move-slid-container-feedback-porfile d-flex gap-2">
+                    <nav className="user-porfile-image">
+                      <img src={item.userImg} alt="userPorfile" />
+                    </nav>
+
+                    <nav className="user-porfile-info">
+                      <h6>{item.userName}</h6>
+                      <p>{item.userJob}</p>
+                    </nav>
                   </nav>
-                  <nav className="user-porfile-info">
-                    <h6>John Doe</h6>
-                    <p>CEO, ABC Company</p>
-                  </nav>
-                </nav>
-              </div>
-              <div className="about-move-slid-container-feedback-card d-flex flex-column rounded-4 gap-4">
-                <nav className="about-move-slid-container-feedback-rate">
-                  <FaStar />
-                  <FaStar />
-                  <FaStar />
-                  <FaStar />
-                  <FaStar />
-                </nav>
-                <nav className="about-move-slid-container-feedback-content">
-                  <p>
-                    "Their dedication to delivering superior solutions and their
-                    meticulous attention to detail have profoundly impacted our
-                    corporate growth trajectory."
-                  </p>
-                </nav>
-                <nav className="about-move-slid-container-feedback-porfile d-flex gap-2">
-                  <nav className="user-porfile-image">
-                    <img
-                      src="https://bootstrapmade.com/content/demo/Strategy/assets/img/person/person-m-1.webp"
-                      alt="userPorfile"
-                    />
-                  </nav>
-                  <nav className="user-porfile-info">
-                    <h6>John Doe</h6>
-                    <p>CEO, ABC Company</p>
-                  </nav>
-                </nav>
-              </div>
+                </div>
+              ))}
             </div>
           </div>
         </SlideFromLift>
