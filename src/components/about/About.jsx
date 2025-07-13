@@ -1,8 +1,12 @@
-import React from "react";
+import React, { useRef } from "react";
 import ScrollReveal, {
   SlideFromLift,
   SlideFromRight,
 } from "./animation/Animation";
+import { Swiper, SwiperSlide } from "swiper/react";
+import { Navigation, Autoplay } from "swiper/modules";
+import "swiper/css";
+import "swiper/css/navigation";
 import { IoCheckmarkOutline } from "react-icons/io5";
 import { GoArrowLeft } from "react-icons/go";
 import { GoArrowRight } from "react-icons/go";
@@ -11,6 +15,7 @@ import { FaStar } from "react-icons/fa";
 import { FaStarHalf } from "react-icons/fa";
 
 export default function About() {
+  const slideMove = useRef(null);
   const feedBackContent = [
     {
       rate: 5,
@@ -39,10 +44,19 @@ export default function About() {
       userName: "John Doe",
       userJob: "Manager, ABC Company",
     },
+    {
+      rate: 4,
+      FeedBack:
+        "Their dedication to delivering superior solutions and their meticulous attention to detail have profoundly impacted ourcorporate growth trajectory.",
+      userImg:
+        "https://bootstrapmade.com/content/demo/Strategy/assets/img/person/person-m-1.webp",
+      userName: "John Doe",
+      userJob: "Manager, ABC Company",
+    },
   ];
   return (
     <>
-      <section className="aboutPage">
+      <section className="aboutPage" id="about">
         <ScrollReveal>
           <h5 className="text-uppercase fw-medium">About</h5>
           <h2 className="text-uppercase text-white fw-bold">
@@ -121,44 +135,63 @@ export default function About() {
                 Hear directly from those who have experienced the impact of our
                 partnership and achieved their strategic goals.
               </p>
-              <div className="about-move-slid-container-content-arrow-icons d-flex gap-4">
-                <span>
-                  <GoArrowLeft />
+              <div className="about-move-slid-container-content-arrow-icons d-flex gap-5">
+                <span className="swiper-button-prev custom-arrow arrow-icon">
+                  <GoArrowLeft size={20} />
                 </span>
-                <span>
-                  <GoArrowRight />
+                <span className="swiper-button-next custom-arrow arrow-icon">
+                  <GoArrowRight size={20} />
                 </span>
               </div>
             </div>
-            <div className="about-move-slid-container-feedback-cards col-12 col-lg-6 ">
-              {feedBackContent.map((item) => (
-                <div
-                  key={item.id}
-                  className="about-move-slid-container-feedback-card d-flex flex-column rounded-4 gap-4"
-                >
-                  <nav className="about-move-slid-container-feedback-rate">
-                    {Array.from({ length: item.rate }).map((_, i) => (
-                      <FaStar key={i} />
-                    ))}
-                    {item.rate % 1 === 0.5 && <FaStarHalf />}
-                  </nav>
+            <div
+              ref={slideMove}
+              className="about-move-slid-container-feedback-cards col-12 col-lg-6"
+            >
+              <Swiper
+                modules={[Navigation, Autoplay]}
+                breakpoints={{
+                  0: { slidesPerView: 1, spaceBetween: 15 },
+                  768: { slidesPerView: 2, spaceBetween: 20 },
+                  1024: { slidesPerView: 2, spaceBetween: 30 },
+                }}
+                loop={true}
+                navigation={{
+                  nextEl: ".swiper-button-next",
+                  prevEl: ".swiper-button-prev",
+                }}
+                autoplay={{ delay: 5000 }}
+              >
+                {feedBackContent.map((item, i) => (
+                  <SwiperSlide key={i}>
+                    <div className="about-move-slid-container-feedback-card d-flex flex-column rounded-4">
+                      <nav className="about-move-slid-container-feedback-rate">
+                        {Array.from({ length: Math.floor(item.rate) }).map(
+                          (_, j) => (
+                            <FaStar key={j} />
+                          )
+                        )}
+                        {item.rate % 1 !== 0 && <FaStarHalf />}
+                      </nav>
 
-                  <nav className="about-move-slid-container-feedback-content">
-                    <p>{item.FeedBack}</p>
-                  </nav>
+                      <nav className="about-move-slid-container-feedback-content">
+                        <p>{item.FeedBack}</p>
+                      </nav>
 
-                  <nav className="about-move-slid-container-feedback-porfile d-flex gap-2">
-                    <nav className="user-porfile-image">
-                      <img src={item.userImg} alt="userPorfile" />
-                    </nav>
+                      <nav className="about-move-slid-container-feedback-porfile d-flex gap-2">
+                        <nav className="user-porfile-image">
+                          <img src={item.userImg} alt="userPorfile" />
+                        </nav>
 
-                    <nav className="user-porfile-info">
-                      <h6>{item.userName}</h6>
-                      <p>{item.userJob}</p>
-                    </nav>
-                  </nav>
-                </div>
-              ))}
+                        <nav className="user-porfile-info">
+                          <h6>{item.userName}</h6>
+                          <p>{item.userJob}</p>
+                        </nav>
+                      </nav>
+                    </div>
+                  </SwiperSlide>
+                ))}
+              </Swiper>
             </div>
           </div>
         </SlideFromLift>
