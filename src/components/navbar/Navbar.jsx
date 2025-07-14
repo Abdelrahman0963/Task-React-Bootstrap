@@ -46,11 +46,7 @@ export default function Navbar() {
                 </div>
                 <ul className="navbar-nav">
                   <li className="nav-item ">
-                    <a
-                      className="nav-link active"
-                      aria-current="page"
-                      href="#home"
-                    >
+                    <a className="nav-link active" href="#home">
                       Home
                     </a>
                   </li>
@@ -112,7 +108,11 @@ export default function Navbar() {
                   </li>
                 </ul>
               </div>
-              <button className="btn-about">Get Started</button>
+              <button className="btn-about">
+                <a className="text-decoration-none text-white" href="#about">
+                  Get Started
+                </a>
+              </button>
             </div>
           </div>
         </nav>

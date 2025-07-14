@@ -354,12 +354,12 @@ header {
 }
 .about-move-slid-container-content-arrow-icons .arrow-icon {
   position: relative;
+  z-index: 1;
   width: 55px;
   height: 55px;
   display: flex;
   align-items: center;
   justify-content: center;
-  cursor: pointer;
   background: var(--secondary-color);
   border-radius: 50%;
   -webkit-border-radius: 50%;
@@ -392,8 +392,8 @@ header {
   display: none;
 }
 .about-move-slid-container-feedback-card {
-  width: 360px !important;
-  height: 300px !important;
+  width: 355px !important;
+  height: auto !important;
   background: var(--secondary-color) !important;
   padding: 1.3rem !important;
   flex-shrink: 0 !important;

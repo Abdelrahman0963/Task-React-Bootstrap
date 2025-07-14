@@ -164,7 +164,7 @@ export default function About() {
               >
                 {feedBackContent.map((item, i) => (
                   <SwiperSlide key={i}>
-                    <div className="about-move-slid-container-feedback-card d-flex flex-column rounded-4">
+                    <div className="about-move-slid-container-feedback-card d-flex flex-column rounded-4 cursor-pointer">
                       <nav className="about-move-slid-container-feedback-rate">
                         {Array.from({ length: Math.floor(item.rate) }).map(
                           (_, j) => (
